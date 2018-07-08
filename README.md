@@ -1,9 +1,9 @@
 About markupsafe
 ================
 
-Home: http://github.com/mitsuhiko/markupsafe
+Home: https://www.palletsprojects.com/p/markupsafe/
 
-Package license: BSD 3-clause
+Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
@@ -14,14 +14,15 @@ Summary: A Python module that implements the jinja2.Markup string
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/markupsafe-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/markupsafe-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/markupsafe-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/markupsafe-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/markupsafe-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/markupsafe-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/markupsafe-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/markupsafe-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/markupsafe/badges/version.svg)](https://anaconda.org/conda-forge/markupsafe)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/markupsafe/badges/downloads.svg)](https://anaconda.org/conda-forge/markupsafe)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-markupsafe-green.svg)](https://anaconda.org/conda-forge/markupsafe) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/markupsafe.svg)](https://anaconda.org/conda-forge/markupsafe) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/markupsafe.svg)](https://anaconda.org/conda-forge/markupsafe) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/markupsafe.svg)](https://anaconda.org/conda-forge/markupsafe) |
 
 Installing markupsafe
 =====================
@@ -66,6 +67,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
