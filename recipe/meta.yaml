@@ -40,7 +40,7 @@ about:
   home: https://www.palletsprojects.com/p/markupsafe
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE.rst
+  license_file: LICENSE.txt
   summary: Safely add untrusted strings to HTML/XML markup.
   description: |
     MarkupSafe implements a text object that escapes characters so it is
