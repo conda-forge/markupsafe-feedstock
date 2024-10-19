@@ -26,12 +26,12 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python >=3.8  # [use_noarch]
+    - python >=3.9  # [use_noarch]
     - python        # [not use_noarch]
     - pip
-    - setuptools
+    - setuptools >=70.1
   run:
-    - python >=3.8  # [use_noarch]
+    - python >=3.9  # [use_noarch]
     - python        # [not use_noarch]
   run_constrained:
     - jinja2 >=3.0.0
