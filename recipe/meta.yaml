@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0
 
 build:
-  number: 0
+  number: 1
   noarch: python  # [use_noarch]
   track_features:
     - markupsafe_no_compile    # [use_noarch]
@@ -25,13 +25,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
   host:
-    - python >=3.9  # [use_noarch]
-    - python        # [not use_noarch]
+    - python {{ python_min }}  # [use_noarch]
+    - python {{ python_min }}  # [not use_noarch]
     - pip
     - setuptools >=70.1
   run:
-    - python >=3.9  # [use_noarch]
-    - python        # [not use_noarch]
+    - python >={{ python_min }}  # [use_noarch]
+    - python >={{ python_min }}  # [not use_noarch]
   run_constrained:
     - jinja2 >=3.0.0
 
@@ -42,6 +42,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://www.palletsprojects.com/p/markupsafe
