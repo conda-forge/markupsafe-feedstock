@@ -28,7 +28,7 @@ requirements:
     - python {{ python_min }}  # [use_noarch]
     - python                   # [not use_noarch]
     - pip
-    - setuptools >=70.1
+    - setuptools >=77
   run:
     - python >={{ python_min }}  # [use_noarch]
     - python                     # [not use_noarch]
