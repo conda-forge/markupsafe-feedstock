@@ -19,7 +19,6 @@ replaced so that they display as the actual characters. This mitigates
 injection attacks, meaning untrusted user input can safely be displayed
 on a page.
 
-
 Current build status
 ====================
 
@@ -333,7 +332,4 @@ Feedstock Maintainers
 * [@pelson](https://github.com/pelson/)
 * [@scopatz](https://github.com/scopatz/)
 * [@xylar](https://github.com/xylar/)
-
-
-<!-- dummy commit to enable rerendering -->
 
