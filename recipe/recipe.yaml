@@ -14,43 +14,50 @@ source:
 
 build:
   number: 1
-  noarch: ${{ 'python' if use_noarch else '' }}
+  noarch: ${{ "python" if use_noarch }}
+  variant:
+    down_prioritize_variant: ${{ 1 if use_noarch else 0 }}
   script:
     - if: use_noarch
       then: sed -i.bak 's/supports_speedups = /supports_speedups = False and /g' setup.py
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  track_features:
-    - if: use_noarch
-      then: markupsafe_no_compile
 
 requirements:
   build:
     - if: build_platform != target_platform and not use_noarch
-      then: python
-    - if: build_platform != target_platform and not use_noarch
-      then: cross-python_${{ target_platform }}
-    - ${{ compiler('c') }}
-    - ${{ stdlib("c") }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+    - if: not use_noarch
+      then:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
   host:
     - if: use_noarch
       then: python ${{ python_min }}.*
-    - if: not use_noarch
-      then: python
+      else: python
     - pip
     - setuptools >=77
   run:
     - if: use_noarch
       then: python >=${{ python_min }}
-    - if: not use_noarch
-      then: python
+      else: python
   run_constraints:
     - jinja2 >=3.0.0
 
 tests:
-  - python:
-      imports:
-        - markupsafe
-      pip_check: true
+  - if: use_noarch
+    then:
+      - python:
+          imports:
+            - markupsafe
+          pip_check: true
+          python_version: ${{ python_min }}.*
+    else:
+      - python:
+          imports:
+            - markupsafe
+          pip_check: true
 
 about:
   license: BSD-3-Clause
