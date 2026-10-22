@@ -13,7 +13,7 @@ source:
   sha256: 2e9ad7dd851bf45fab9f75cbff4cb493fee9979e8d8c7c9c3ee119022518edd6
 
 build:
-  number: 1
+  number: 2
   noarch: ${{ "python" if use_noarch }}
   variant:
     down_prioritize_variant: ${{ 1 if use_noarch else 0 }}
@@ -24,12 +24,12 @@ build:
 
 requirements:
   build:
-    - if: build_platform != target_platform and not use_noarch
-      then:
-        - python
-        - cross-python_${{ target_platform }}
     - if: not use_noarch
       then:
+        - if: build_platform != target_platform
+          then:
+            - python
+            - cross-python_${{ target_platform }}
         - ${{ compiler('c') }}
         - ${{ stdlib("c") }}
   host:
